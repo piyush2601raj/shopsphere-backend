@@ -1,4 +1,5 @@
 package com.shopsphere.model;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -21,11 +22,9 @@ public class User {
     // =========================
     // PASSWORD - HIDDEN FROM JSON
     // =========================
-
-    @JsonIgnore
-    @Column(nullable = false)
-    private String password;
-
+@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+@Column(nullable = false)
+private String password;
     @Enumerated(EnumType.STRING)
     private Role role;
 
