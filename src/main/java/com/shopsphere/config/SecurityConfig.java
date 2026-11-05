@@ -20,7 +20,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @Configuration
 public class SecurityConfig {
 
-```
+
 private final JwtFilter jwtFilter;
 
 public SecurityConfig(JwtFilter jwtFilter) {
